@@ -51,6 +51,10 @@ let uc = {
      */
 
     manifest: {
+        listServerConfs: {
+            type: "GET",
+            path: "server_size"
+        },
         listServers: {
             type: "GET",
             path: "server"
@@ -63,6 +67,10 @@ let uc = {
             type: "GET",
             path: "storage"
         },
+        listCDROMs: {
+            type: "GET",
+            path: "storage/cdrom"
+        },
         serverDetails: {
             type: "GET",
             path: "server/[serveruuid]"
@@ -74,6 +82,30 @@ let uc = {
         createServer: {
             type: "POST",
             path: "server"
+        },
+        modifyServer: {
+            type: "PUT",
+            path: "server/[serveruuid]"
+        },
+        startServer: {
+            type: "POST",
+            path: "server/[serveruuid]/start"
+        },
+        stopServer: {
+            type: "POST",
+            path: "server/[serveruuid]/stop"
+        },
+        restartServer: {
+            type: "POST",
+            path: "server/[serveruuid]/restart"
+        },
+        cancelServerOperation: {
+            type: "POST",
+            path: "server/[serveruuid]/cancel"
+        },
+        deleteServer: {
+            type: "DELETE",
+            path: "server/[serveruuid]?storages=[storageaction]&backups=[backupaction]"
         },
         cloneStorage: {
             type: "POST",
@@ -90,7 +122,22 @@ let uc = {
      */
     call: (cmd, params = {}, data = {}, callback = () => {}) => {
 
-        let fn = (uc.manifest[cmd].type == "GET") ? request.get : request.post;
+        let fn = request.get; // GET is default requesst type
+
+        switch(uc.manifest[cmd].type) {
+            case "GET":
+                fn = request.get;
+                break;
+            case "POST":
+                fn = request.post;
+                break;
+            case "PUT":
+                fn = request.put;
+                break;
+            case "DELETE":
+                fn = request.del;
+                break;
+            }
 
         let path = uc.manifest[cmd].path;
 
@@ -106,7 +153,7 @@ let uc = {
             }
         };
 
-        if (uc.manifest[cmd].type == "POST") {
+        if (uc.manifest[cmd].type == "POST" || uc.manifest[cmd].type == "PUT") {
             options.json = true;
             options.body = data;
         }

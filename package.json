@@ -1,6 +1,6 @@
 {
   "name": "upcloud-api",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A JavaScript Client for the UpCloud API",
   "main": "upcloud-api.js",
   "scripts": {

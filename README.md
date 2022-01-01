@@ -99,6 +99,16 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 ### Commands
 
+#### `listServerConfs`
+
+*Description*: Request a list of available server configurations
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server_size`
+
+*Request Type*: GET
+
+*Parameters*: None
+
 #### `listServers`
 
 *Description*: Requests a list of servers
@@ -124,6 +134,16 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 *Description*: Requests a list of active storage items
 
 *UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage`
+
+*Request Type*: GET
+
+*Parameters*: None
+
+### `listCDROMs`
+
+*Description*: Requests a list of available CDROM images
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/cdrom`
 
 *Request Type*: GET
 
@@ -164,6 +184,95 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 *Parameters*: None
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+### `modifyServer`
+
+*Description*: Modify configuration of an existing server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server`
+
+*Request Type*: PUT
+
+*Parameters*:
+
+* `serveruuid`: UUID for the server
+
+*PUT Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+### `startServer`
+
+*Description*: Start a stopped server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/start`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `serveruuid`: UUID for the server
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+### `stopServer`
+
+*Description*: Stop a running server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/stop`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `serveruuid`: UUID for the server
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+### `restartServer`
+
+*Description*: Restart a running server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/restart`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `serveruuid`: UUID for the server
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+### `cancelServerOperation`
+
+*Description*: Cancel a running operation on a server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/cancel`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `serveruuid`: UUID for the server
+
+*POST Data*: None
+
+### `deleteServer`
+
+*Description*: Delete a stopped server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]?storages=[storageaction]&backups=[backupaction]`
+
+*Request Type*: DELETE
+
+*Parameters*:
+
+* `serveruuid`: UUID for the server
+* `storageaction`: Indicates whether to delete attached storage -- possible values are:
+  * `0` or `false`: Don't delete attached storage
+  * `1` or `true`: Delete attached storage
+* `backupaction`: Indicates whether to keep backups of deleted storage -- possible values are:
+  * `keep`: Keep all backups
+  * `keep_latest`: Keep latest backup
+  * `delete`: Delete backups
 
 ### `cloneStorage`
 
