@@ -1,0 +1,26 @@
+{
+  "name": "upcloud-api",
+  "version": "0.0.1",
+  "description": "A JavaScript Client for the UpCloud API",
+  "main": "upcloud-api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "upcloud"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/likeablegeek/upcloud-api.git"
+  },
+  "author": "Arman Danesh",
+  "license": "Apache 2",
+  "bugs": {
+    "url": "https://github.com/likeablegeek/upcloud-api/issues"
+  },
+  "homepage": "https://github.com/likeablegeek/upcloud-api",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
