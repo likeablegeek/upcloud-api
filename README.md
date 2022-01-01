@@ -39,12 +39,12 @@ uc.init(USERNAME_GOES_HERE,PASSWORD_GOES_HERE);
 This is an early pre-release of `upcloud-api` with many limitations:
 
 1. This release only covers a handful of UpCloud API capabilities:
-  * Getting a list of servers,
-  * Getting a server's details,
-  * Creating a server,
-  * Getting list of storage templates,
-  * Cloning storage from a template, and
-  * Attaching storage to a server.
+  a. Getting a list of servers,
+  b. Getting a server's details,
+  c. Creating a server,
+  d. Getting list of storage templates,
+  e. Cloning storage from a template, and
+  f. Attaching storage to a server.
 2. There is no error handling yet in `upcloud-api` so if you fail to authenticate, fail to connect to the UpCloud API or there is an error in the data passed to the API, `upcloud-api` will fail without any error handling and your script will terminate with an error.
 
 This version currently uses version 1.3 of the UpCloud API.
