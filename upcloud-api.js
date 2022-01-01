@@ -51,6 +51,7 @@ let uc = {
      */
 
     manifest: {
+
         listServerConfs: {
             type: "GET",
             path: "server_size"
@@ -59,25 +60,9 @@ let uc = {
             type: "GET",
             path: "server"
         },
-        listTemplates: {
-            type: "GET",
-            path: "storage/template"
-        },
-        listStorages: {
-            type: "GET",
-            path: "storage"
-        },
-        listCDROMs: {
-            type: "GET",
-            path: "storage/cdrom"
-        },
         serverDetails: {
             type: "GET",
             path: "server/[serveruuid]"
-        },
-        storageDetails: {
-            type: "GET",
-            path: "storage/[storageuuid]"
         },
         createServer: {
             type: "POST",
@@ -107,6 +92,35 @@ let uc = {
             type: "DELETE",
             path: "server/[serveruuid]?storages=[storageaction]&backups=[backupaction]"
         },
+
+        storageDetails: {
+            type: "GET",
+            path: "storage/[storageuuid]"
+        },
+        listTemplates: {
+            type: "GET",
+            path: "storage/template"
+        },
+        listStorages: {
+            type: "GET",
+            path: "storage"
+        },
+        listStoragesByType: {
+            type: "GET",
+            path: "storage/[storagetype]"
+        },
+        listCDROMs: {
+            type: "GET",
+            path: "storage/cdrom"
+        },
+        createStorage: {
+            type: "POST",
+            path: "storage"
+        },
+        modifyStorage: {
+            type: "PUT",
+            path: "storage/[storageuuid]"
+        },
         cloneStorage: {
             type: "POST",
             path: "storage/[storageuuid]/clone"
@@ -114,7 +128,37 @@ let uc = {
         attachStorage: {
             type: "POST",
             path: "server/[serveruuid]/storage/attach"
+        },
+        detachStorage: {
+            type: "POST",
+            path: "server/[serveruuid]/storage/detach"
+        },
+        loadCDROM: {
+            type: "POST",
+            path: "server/[serveruuid]/cdrom/load"
+        },
+        ejectCDROM: {
+            type: "POST",
+            path: "server/[serveruuid]/cdrom/eject"
+        },
+        createStorageImport: {
+            type: "POST",
+            path: "storage/[storageuuid]/import"
+        },
+        storageImportDetails: {
+            type: "GET",
+            path: "storage/[storageuuid]/import"
+        },
+        cancelStorageImport: {
+            type: "POST",
+            path: "storage/[storageuuid]/import/cancel"
+        },
+        cancelStorageOperation: {
+            type: "POST",
+            path: "storage/[storageuuid]/cancel"
         }
+
+
     },
 
     /*****

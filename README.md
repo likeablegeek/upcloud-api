@@ -49,9 +49,7 @@ This is an early pre-release of `upcloud-api` with many limitations:
 
 This version currently uses version 1.3 of the UpCloud API.
 
-## Using `upcloud-api`
-
-### Invoking the API
+## Invoking the API
 
 All interaction with the API through `upcloud-api` is done through the `call` method of `upcloud-api`. The syntax for the `call` method is:
 
@@ -97,7 +95,11 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 });
 ```
 
-### Commands
+
+## Commands
+
+
+### Server Commands
 
 #### `listServerConfs`
 
@@ -119,36 +121,6 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*: None
 
-### `listTemplates`
-
-*Description*: Requests a list of storage templates
-
-*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/template`
-
-*Request Type*: GET
-
-*Parameters*: None
-
-### `listStorages`
-
-*Description*: Requests a list of active storage items
-
-*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage`
-
-*Request Type*: GET
-
-*Parameters*: None
-
-### `listCDROMs`
-
-*Description*: Requests a list of available CDROM images
-
-*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/cdrom`
-
-*Request Type*: GET
-
-*Parameters*: None
-
 ### `serverDetails`
 
 *Description*: Request details of a specific server
@@ -160,18 +132,6 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 *Parameters*:
 
 * `serveruuid`: UUID for the server
-
-### `storageDetails`
-
-*Description*: Request details of a specific storage item
-
-*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage`
-
-*Request Type*: GET
-
-*Parameters*:
-
-* `storageuuid`: UUID for the storage item
 
 ### `createServer`
 
@@ -274,6 +234,96 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
   * `keep_latest`: Keep latest backup
   * `delete`: Delete backups
 
+
+## Storage Commands
+
+### `storageDetails`
+
+*Description*: Request details of a specific storage item
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `storageuuid`: UUID for the storage item
+
+### `listTemplates`
+
+*Description*: Requests a list of storage templates
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/template`
+
+*Request Type*: GET
+
+*Parameters*: None
+
+### `listStorages`
+
+*Description*: Requests a list of active storage items
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage`
+
+*Request Type*: GET
+
+*Parameters*: None
+
+### `listStoragesByType`
+
+*Description*: Requests a list of active storage items by type
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[TYPE]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `storagetype`: The type of storage to return in the list -- possible values are:
+  * `public`
+  * `private`
+  * `normal`
+  * `backups`
+  * `cdrom`
+  * `template`
+  * `favorite`
+
+### `listCDROMs`
+
+*Description*: Requests a list of available CDROM images
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/cdrom`
+
+*Request Type*: GET
+
+*Parameters*: None
+
+### `createStorage`
+
+*Description*: Create a new storage resource
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/`
+
+*Request Type*: POST
+
+*Parameters*: None
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+### `modifyStorage`
+
+*Description*: Change configuration of a storage resource
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[UUID]`
+
+*Request Type*: PUT
+
+*Parameters*:
+
+* `storageuuid`: UUID for the storage template
+
+*PUT Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
 ### `cloneStorage`
 
 *Description*: Clone a storage template to a new storage item
@@ -301,6 +351,103 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 * `serveruuid`: UUID for the server
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+### `detachStorage`
+
+*Description*: Detach a storage item from a server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/storage/detach`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `serveruuid`: UUID for the server
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+### `loadCDROM`
+
+*Description*: Load a CDROM onto a server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/cdrom/load`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `serveruuid`: UUID for the server
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+### `ejectCDROM`
+
+*Description*: Eject a CDROM from a server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/cdrom/eject`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `serveruuid`: UUID for the server
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+### `createStorageImport`
+
+*Description*: Import data into an existing storage resource
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[UUID]/import`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `storageuuid`: UUID for the storage
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+### `storageImportDetails`
+
+*Description*: Get details of an ongoing or completed storage import task
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[UUID]/import`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `storageuuid`: UUID for the storage
+
+### `cancelStorageImport`
+
+*Description*: Cancel a running storage import task
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[UUID]/import/cancel`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `storageuuid`: UUID for the storage
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+### `cancelStorageOperation`
+
+*Description*: Cancel a running cloning operation
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[UUID]/cancel`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `storageuuid`: UUID for the storage
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
 
 ## Dependencies
 
