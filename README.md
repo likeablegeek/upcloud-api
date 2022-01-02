@@ -8,7 +8,7 @@ A Javascript client for the UpCloud API
 * [Including `upcloud-api` in your scripts/applications](#including-upcloud-api-in-your-scriptsapplications)
 * [Initialisation](#initialisation)
 * [Scope and Roadmap](#scope-and-roadmap)
-* [Invoking the API](i#invoking-the-api)
+* [Invoking the API](#invoking-the-api)
 * [Commands](#commands)
   * [Server Commands](#server-commands)
   * [Storage Commands](#storage-commands)
