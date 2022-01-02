@@ -156,6 +156,21 @@ let uc = {
         cancelStorageOperation: {
             type: "POST",
             path: "storage/[storageuuid]/cancel"
+        },
+
+        listPlans: {
+            type: "GET",
+            path: "plan"
+        },
+
+        listZones: {
+            type: "GET",
+            path: "zone"
+        },
+
+        listPrices: {
+            type: "GET",
+            path: "price"
         }
 
 

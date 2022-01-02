@@ -121,7 +121,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*: None
 
-### `serverDetails`
+#### `serverDetails`
 
 *Description*: Request details of a specific server
 
@@ -133,7 +133,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 * `serveruuid`: UUID for the server
 
-### `createServer`
+#### `createServer`
 
 *Description*: Create a new server
 
@@ -145,7 +145,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
-### `modifyServer`
+#### `modifyServer`
 
 *Description*: Modify configuration of an existing server
 
@@ -159,7 +159,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *PUT Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
-### `startServer`
+#### `startServer`
 
 *Description*: Start a stopped server
 
@@ -173,7 +173,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
-### `stopServer`
+#### `stopServer`
 
 *Description*: Stop a running server
 
@@ -187,7 +187,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
-### `restartServer`
+#### `restartServer`
 
 *Description*: Restart a running server
 
@@ -201,7 +201,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
-### `cancelServerOperation`
+#### `cancelServerOperation`
 
 *Description*: Cancel a running operation on a server
 
@@ -215,7 +215,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *POST Data*: None
 
-### `deleteServer`
+#### `deleteServer`
 
 *Description*: Delete a stopped server
 
@@ -235,9 +235,9 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
   * `delete`: Delete backups
 
 
-## Storage Commands
+### Storage Commands
 
-### `storageDetails`
+#### `storageDetails`
 
 *Description*: Request details of a specific storage item
 
@@ -249,7 +249,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 * `storageuuid`: UUID for the storage item
 
-### `listTemplates`
+#### `listTemplates`
 
 *Description*: Requests a list of storage templates
 
@@ -259,7 +259,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*: None
 
-### `listStorages`
+#### `listStorages`
 
 *Description*: Requests a list of active storage items
 
@@ -269,7 +269,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*: None
 
-### `listStoragesByType`
+#### `listStoragesByType`
 
 *Description*: Requests a list of active storage items by type
 
@@ -288,7 +288,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
   * `template`
   * `favorite`
 
-### `listCDROMs`
+#### `listCDROMs`
 
 *Description*: Requests a list of available CDROM images
 
@@ -298,7 +298,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*: None
 
-### `createStorage`
+#### `createStorage`
 
 *Description*: Create a new storage resource
 
@@ -310,7 +310,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
-### `modifyStorage`
+#### `modifyStorage`
 
 *Description*: Change configuration of a storage resource
 
@@ -324,7 +324,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *PUT Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
-### `cloneStorage`
+#### `cloneStorage`
 
 *Description*: Clone a storage template to a new storage item
 
@@ -338,7 +338,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
-### `attachStorage`
+#### `attachStorage`
 
 *Description*: Attach a storage item to a server
 
@@ -352,7 +352,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
-### `detachStorage`
+#### `detachStorage`
 
 *Description*: Detach a storage item from a server
 
@@ -366,7 +366,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
-### `loadCDROM`
+#### `loadCDROM`
 
 *Description*: Load a CDROM onto a server
 
@@ -380,7 +380,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
-### `ejectCDROM`
+#### `ejectCDROM`
 
 *Description*: Eject a CDROM from a server
 
@@ -394,7 +394,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
-### `createStorageImport`
+#### `createStorageImport`
 
 *Description*: Import data into an existing storage resource
 
@@ -408,7 +408,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
-### `storageImportDetails`
+#### `storageImportDetails`
 
 *Description*: Get details of an ongoing or completed storage import task
 
@@ -420,7 +420,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 * `storageuuid`: UUID for the storage
 
-### `cancelStorageImport`
+#### `cancelStorageImport`
 
 *Description*: Cancel a running storage import task
 
@@ -434,7 +434,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
-### `cancelStorageOperation`
+#### `cancelStorageOperation`
 
 *Description*: Cancel a running cloning operation
 
@@ -447,6 +447,45 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 * `storageuuid`: UUID for the storage
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+
+### Plan Commands
+
+#### `listPlans`
+
+*Description*: Retrieve a list of simple server plans
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/plan`
+
+*Request Type*: GET
+
+*Parameters*: None
+
+
+### Zone Commands
+
+#### `listZones`
+
+*Description*: Retrieve a list of available zones
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/zone`
+
+*Request Type*: GET
+
+*Parameters*: None
+
+
+### Price Commands
+
+#### `listPrices`
+
+*Description*: Retrieve a list of resource prices
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/price`
+
+*Request Type*: GET
+
+*Parameters*: None
 
 
 ## Dependencies
