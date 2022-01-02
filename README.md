@@ -944,6 +944,46 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
 
+### Host Commands
+
+#### `listHosts`
+
+*Description*: Get list of available hosts
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/host`
+
+*Request Type*: GET
+
+*Parameters*: None
+
+#### `hostDetails`
+
+*Description*: Get details of a specified host
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/host/[ID]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `hostid`: ID of host
+
+#### `modifyHost`
+
+*Description*: Modify description of a specified host
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/host/[ID]`
+
+*Request Type*: PATCH
+
+*Parameters*:
+
+* `hostid`: ID of host
+
+*PATCH Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+
+
 
 ## Dependencies
 

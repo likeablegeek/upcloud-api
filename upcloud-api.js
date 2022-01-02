@@ -314,6 +314,18 @@ let uc = {
             path: "server/[serveruuid]/untag/[tags]"
         },
 
+        listHosts: {
+            type: "GET",
+            path: "host"
+        },
+        hostDetails: {
+            type: "GET",
+            path: "host/[hostid]"
+        },
+        modifyHost: {
+            type: "PATCH",
+            path: "host/[hostid]"
+        },
 
 
     },
