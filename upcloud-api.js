@@ -247,7 +247,26 @@ let uc = {
             path: "account/current_network_usage"
         },
 
-
+        listAddresses: {
+            type: "GET",
+            path: "ip_address"
+        },
+        addressDetails: {
+            type: "GET",
+            path: "ip_address/[address]"
+        },
+        assignAddress: {
+            type: "POST",
+            path: "ip_address"
+        },
+        modifyAddress: {
+            type: "PATCH",
+            path: "ip_address/[address]"
+        },
+        releaseAddress: {
+            type: "DELETE",
+            path: "ip_address/[address]"
+        },
 
 
 
@@ -270,6 +289,9 @@ let uc = {
             case "PUT":
                 fn = request.put;
                 break;
+            case "PATCH":
+                fn = request.patch;
+                break;
             case "DELETE":
                 fn = request.del;
                 break;
@@ -289,7 +311,7 @@ let uc = {
             }
         };
 
-        if (uc.manifest[cmd].type == "POST" || uc.manifest[cmd].type == "PUT") {
+        if (uc.manifest[cmd].type == "POST" || uc.manifest[cmd].type == "PUT" || uc.manifest[cmd].type == "PATCH") {
             options.json = true;
             options.body = data;
         }

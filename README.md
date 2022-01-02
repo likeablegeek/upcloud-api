@@ -731,6 +731,72 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 
 
+## IP Address Commands
+
+#### `listAddresss`
+
+*Description*: Get list of IP addresses assigned to servers in the account
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/ip_address`
+
+*Request Type*: GET
+
+*Parameters*: None
+
+#### `addressDetails`
+
+*Description*: Get detailed information about a specific IP address
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/ip_address/[ADDRESS]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `address`: IP address such as `127.0.0.1`
+
+#### `assignAddress`
+
+*Description*: Assign a new IP address to a server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/ip_address`
+
+*Request Type*: POST
+
+*Parameters*: None
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `modifyAddress`
+
+*Description*: Modify an IP address
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/ip_address/[ADDRESS]`
+
+*Request Type*: PATCH
+
+*Parameters*:
+
+* `address`: IP address such as `127.0.0.1`
+
+*PATCH Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `releaseAddress`
+
+*Description*: Release an IP address from a server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/ip_address/[ADDRESS]`
+
+*Request Type*: DELETE
+
+*Parameters*:
+
+* `address`: IP address such as `127.0.0.1`
+
+
+
+
+
 ## Dependencies
 
 `upcloud-api` depends on the following `npm`/Node packages:
