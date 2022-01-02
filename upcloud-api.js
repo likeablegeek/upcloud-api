@@ -327,6 +327,67 @@ let uc = {
             path: "host/[hostid]"
         },
 
+        listNetworks: {
+            type: "GET",
+            path: "network"
+        },
+        listNetworksByZone: {
+            type: "GET",
+            path: "network/?zone=[zone]"
+        },
+        listNetworksByServer: {
+            type: "GET",
+            path: "server/[serveruuid]/networking"
+        },
+        networkDetails: {
+            type: "GET",
+            path: "network/[networkuuid]"
+        },
+        modifyNetwork: {
+            type: "POST",
+            path: "network/[networkuuid]"
+        },
+        createPrivateNetwork: {
+            type: "POST",
+            path: "network"
+        },
+        deleteNetwork: {
+            type: "DELETE",
+            path: "network/[networkuuid]"
+        },
+        createInterface: {
+            type: "POST",
+            path: "server/[serveruuid]/networking/interface"
+        },
+        modifyInterace: {
+            type: "PUT",
+            path: "server/[serveruuid]/networking/interface/[interface]"
+        },
+        deleteInterface: {
+            type: "DELETE",
+            path: "server/[serveruuid]/networking/interface/[interface]"
+        },
+        listRouters: {
+            type: "GET",
+            path: "router"
+        },
+        routerDetails: {
+            type: "GET",
+            path: "router/[routeruuid]"
+        },
+        createRouter: {
+            type: "POST",
+            path: "router"
+        },
+        modifyRouter: {
+            type: "PATCH",
+            path: "router/[routeruuid]"
+        },
+        deleteRouter: {
+            type: "DELETE",
+            path: "router/[routeruuid]"
+        },
+
 
     },
 

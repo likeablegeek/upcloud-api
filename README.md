@@ -983,6 +983,194 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 *PATCH Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
 
+### Network Commands
+
+#### `listNetworks`
+
+*Description*: Get list of networks
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/network`
+
+*Request Type*: GET
+
+*Parameters*: None
+
+#### `listNetworksByZone`
+
+*Description*: Get list of networks in a specific zone
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/network/?zone=[ZONE]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `zone`: Zone name
+
+#### `listNetworksByServer`
+
+*Description*: Get list of networks a specific server is connected to
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/networking]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `serveruuid`: UUID of server
+
+#### `networkDetails`
+
+*Description*: Get details of a specific network
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/network/[UUID]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `networkuuid`: UUID of network
+
+#### `modifyNetwork`
+
+*Description*: Modify details of a specific network
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/network/[UUID]`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `networkuuid`: UUID of network
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `createPrivateNetwork`
+
+*Description*: Creates new SDN private network 
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/network`
+
+*Request Type*: POST
+
+*Parameters*: None
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `deleteNetwork`
+
+*Description*: Delete a specific network
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/network/[UUID]`
+
+*Request Type*: DELETE
+
+*Parameters*:
+
+* `networkuuid`: UUID of network
+
+#### `createInterface`
+
+*Description*: Creates new network interface on a specified server and connect it to an SDN private network 
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/networking/interface`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `serveruuid`: UUID of server
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `modifyInterface`
+
+*Description*: Modifies details of a network interface on a specified server 
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/networking/interface/[INDEX]`
+
+*Request Type*: PUT
+
+*Parameters*:
+
+* `serveruuid`: UUID of server
+* `interface`: Index of the network interface from the server
+
+*PUT Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `deleteInterface`
+
+*Description*: Deletes a  network interface on a specified server and disconencts from an SDN private network 
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/networking/interface/[INDEX]`
+
+*Request Type*: DELETE
+
+*Parameters*:
+
+* `serveruuid`: UUID of server
+* `interface`: Index of the network interface from the server
+
+#### `listRouters`
+
+*Description*: Get list of routers
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/route`
+
+*Request Type*: GET
+
+*Parameters*: None
+
+#### `routerDetails`
+
+*Description*: Get details of a specified router
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/route/[UUID]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `routeruuid`: UUID of router
+
+#### `createRouter`
+
+*Description*: Create a router
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/route`
+
+*Request Type*: POST
+
+*Parameters*: None
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `modifyRouter`
+
+*Description*: Modify a router
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/route/[UUID]`
+
+*Request Type*: PATCH
+
+*Parameters*:
+
+* `routeruuid`: UUID of router
+
+*PATCH Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `deleteRouter`
+
+*Description*: Delete a router
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/route/[UUID]`
+
+*Request Type*: DELETE
+
+*Parameters*:
+
+* `routeruuid`: UUID of router
+
 
 
 ## Dependencies
