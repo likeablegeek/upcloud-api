@@ -2,6 +2,29 @@
 
 A Javascript client for the UpCloud API
 
+## Table of Contents
+
+* [Installing `upcloud-api`](#installing-upcloud-api)
+* [Including `upcloud-api` in your scripts/applications](#including-upcloud-api-in-your-scriptsapplications)
+* [Initialisation](#initialisation)
+* [Scope and Roadmap](#scope-and-roadmap)
+* [Invoking the API](i#invoking-the-api)
+* [Commands](#commands)
+  * [Server Commands](#server-commands)
+  * [Storage Commands](#storage-commands)
+  * [Plan Commands](#plan-commands)
+  * [Zone Commands](#zone-commands)
+  * [Price Commands](#price-commands)
+  * [Account Commands](#account-commands)
+  * [IP Address Commands](#ip-address-commands)
+  * [Firewall Commands](#firewall-commands)
+  * [Tag Commands](#tag-commands)
+  * [Host Commands](#host-commands)
+  * [Network Commands](#network-commands)
+  * [Object Storage Commands](#object-storage-commands)
+* [Dependencies](#dependencies)
+* [Copyright and License](#copyright-and-license)
+
 ## Installing `upcloud-api`
 
 `upcloud-api` is available as a Node module on [npmjs.com](https://www.npmjs.com/) and can simply be installed with:
