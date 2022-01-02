@@ -863,6 +863,86 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 * `index`: Index of the rule in the list of firewall rules for the server (first entry is index `1`)
 
 
+### Tag Commands
+
+#### `listTags`
+
+*Description*: Get list of tags
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/tag`
+
+*Request Type*: GET
+
+*Parameters*: None
+
+#### `createTag`
+
+*Description*: Create a tag
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/tag`
+
+*Request Type*: POST
+
+*Parameters*: None
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `createTag`
+
+*Description*: Modify a tag
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/tag/[TAG]`
+
+*Request Type*: PUT
+
+*Parameters*:
+
+* `tag`: Name of tag to modify
+
+*PUT Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `deleteTag`
+
+*Description*: Delete a tag
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/tag/[TAG]`
+
+*Request Type*: DELETE
+
+*Parameters*:
+
+* `tag`: Name of tag to modify
+
+#### `assignTags`
+
+*Description*: Assign one or more tags to a server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/tag/[TAGS]`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `serveruuid`: UUID of server
+* `tags`: Comma-separated list of tags to assign to server
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `removeTags`
+
+*Description*: Remove one or more tags from a server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/untag/[TAGS]`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `serveruuid`: UUID of server
+* `tags`: Comma-separated list of tags to assign to server
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
 
 
 ## Dependencies

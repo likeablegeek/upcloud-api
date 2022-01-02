@@ -289,6 +289,31 @@ let uc = {
             path: "server/[serveruuid]/firewall_rule/[index]"
         },
 
+        listTags: {
+            type: "GET",
+            path: "tag"
+        },
+        createTag: {
+            type: "POST",
+            path: "tag"
+        },
+        modifyTag: {
+            type: "PUT",
+            path: "tag/[tag]"
+        },
+        deleteTag: {
+            type: "PUT",
+            path: "tag/[tag]"
+        },
+        assignTags: {
+            type: "POST",
+            path: "server/[serveruuid]/tag/[tags]"
+        },
+        removeTags: {
+            type: "POST",
+            path: "server/[serveruuid]/untag/[tags]"
+        },
+
 
 
     },
