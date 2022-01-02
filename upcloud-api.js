@@ -157,6 +157,31 @@ let uc = {
             type: "POST",
             path: "storage/[storageuuid]/cancel"
         },
+        createStorageTemplate: {
+            type: "POST",
+            path: "storage/[storageuuid]/templatize"
+        },
+        createStorageBackup: {
+            type: "POST",
+            path: "storage/[storageuuid]/backup"
+        },
+        restoreStorageFromBackup: {
+            type: "POST",
+            path: "storage/[storageuuid]/restore"
+        },
+        addStorageToFavorites: {
+            type: "POST",
+            path: "storage/[storageuuid]/favorite"
+        },
+        removeStorageFromFavorites: {
+            type: "DELETE",
+            path: "storage/[storageuuid]/favorite"
+        },
+        deleteStorage: {
+            type: "DELETE",
+            path: "storage/[storageuuid]?&backups=[backupaction]"
+        },
+
 
         listPlans: {
             type: "GET",
@@ -171,7 +196,59 @@ let uc = {
         listPrices: {
             type: "GET",
             path: "price"
-        }
+        },
+
+        accountInfo: {
+            type: "GET",
+            path: "account"
+        },
+        listAccounts: {
+            type: "GET",
+            path: "account/list"
+        },
+        accountDetails: {
+            type: "GET",
+            path: "account/details/[username]"
+        },
+        modifyAccount: {
+            type: "PUT",
+            path: "account/details/[username]"
+        },
+        createSubaccount: {
+            type: "POST",
+            path: "account/sub"
+        },
+        deleteSubaccount: {
+            type: "DELETE",
+            path: "account/sub/[username]"
+        },
+        billingSummary: {
+            type: "GET",
+            path: "account/billing_summary/[yyyy]-[mm]"
+        },
+        billingDetails: {
+            type: "GET",
+            path: "account/billing_summary/[yyyy]-[mm]/detailed"
+        },
+        billingResource: {
+            type: "GET",
+            path: "account/resource_billing_summary/[resourceuuid]/[yyyy]-[mm]"
+        },
+        networkUsage: {
+            type: "GET",
+            path: "account/network_usage/?from=[from]&to=[to]&accumulate=[duration]"
+        },
+        resourceNetworkUsage: {
+            type: "GET",
+            path: "account/resource_network_usage/?from=[from]&to=[to]&accumulate=[duration]&resource_id=[resourceuuid]"
+        },
+        currentNetworkUsage: {
+            type: "GET",
+            path: "account/current_network_usage"
+        },
+
+
+
 
 
     },

@@ -448,6 +448,92 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
+#### `createStorageTemplate`
+
+*Description*: Create a template from a storage resource
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[UUID]/templatize`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `storageuuid`: UUID for the storage
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `createStorageBackup`
+
+*Description*: Create a point-in-time backup of a storage resource
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[UUID]/backup`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `storageuuid`: UUID for the storage
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `restoreStorageFromBackup`
+
+*Description*: Restores a storage resource from its backup
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[UUID]/restore`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `storageuuid`: UUID for the storage
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `addStorageToFavorites`
+
+*Description*: Add a storage resource to the favorites list
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[UUID]/favorite`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `storageuuid`: UUID for the storage
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `removeStorageFromFavorites`
+
+*Description*: Remove a storage resource from the favorites list
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[UUID]/favorite`
+
+*Request Type*: DELETE
+
+*Parameters*:
+
+* `storageuuid`: UUID for the storage
+
+#### `deleteStorage`
+
+*Description*: Delete a storage resource
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[UUID]?backups=[backupaction]`
+
+*Request Type*: DELETE
+
+*Parameters*:
+
+* `serveruuid`: UUID for the server
+* `backupaction`: Indicates whether to keep backups of deleted storage -- possible values are:
+  * `keep`: Keep all backups
+  * `keep_latest`: Keep latest backup
+  * `delete`: Delete backups
+
+
+
 
 ### Plan Commands
 
@@ -486,6 +572,163 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 *Request Type*: GET
 
 *Parameters*: None
+
+
+### Account Commands
+
+#### `accountInfo`
+
+*Description*: Retrieve basic information forthe current user's account or subaccount
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/account`
+
+*Request Type*: GET
+
+*Parameters*: None
+
+#### `listAccounts`
+
+*Description*: Retrieve list of accounts and subaccounts for current organisation
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/account/list`
+
+*Request Type*: GET
+
+*Parameters*: None
+
+#### `accountDetails`
+
+*Description*: Retrieve details of a named account or subaccount
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/account/details/[USERNAME]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `username`: The username of the account or subaccount
+
+#### `modifyAccount`
+
+*Description*: Modify details of a named account or subaccount
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/account/details/[USERNAME]`
+
+*Request Type*: PUT
+
+*Parameters*:
+
+* `username`: The username of the account or subaccount
+
+*PUT Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `createSubaccount`
+
+*Description*: Create a subaccount
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/account/sub`
+
+*Request Type*: POST
+
+*Parameters*: None
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `deleteSubaccount`
+
+*Description*: Delete a named subaccount
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/account/sub/[USERNAME]`
+
+*Request Type*: DELETE
+
+*Parameters*:
+
+* `username`: The username of the subaccount
+
+#### `billingSummary`
+
+*Description*: Get a billing summary for a specified month
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/account/billing_summary/[YYYY]-[MM]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `yyyy`: The four-digit year for the month being requested
+* `mm`: The two-digit month (including leading zero if needed) for the month being requested
+
+#### `billngDetails`
+
+*Description*: Get a detailed billing report for a specified month
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/account/billing_summary/[YYYY]-[MM]/detailed`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `yyyy`: The four-digit year for the month being requested
+* `mm`: The two-digit month (including leading zero if needed) for the month being requested
+
+#### `billingResource`
+
+*Description*: Get a resource billing summary for a specified month for a specific resource
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/account/resource_billing_summary/[UUID]/[YYYY]-[MM]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `resourceuuid`: The UUID of the resource
+* `yyyy`: The four-digit year for the month being requested
+* `mm`: The two-digit month (including leading zero if needed) for the month being requested
+
+#### `networkUsage`
+
+*Description*: Get network usage for a period of time
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/account/network_usage/?from=[FROM]&to=[TO]&accumulate=[DURATION]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `from`: Timestamp for start of time period in RFC 3339 format (YYYY-MM-DDTHH:MM:SSZ)
+* `to`: Timestamp for end of time period in RFC 3339 format (YYYY-MM-DDTHH:MM:SSZ)
+* `duration`: Specifies time block for accumulating usage in the report -- possible values are:
+  * `day`
+  * `hour`
+
+#### `resourceNetworkUsage`
+
+*Description*: Get network usage for a specified resource for a period of time
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/account/resource_network_usage/?from=[FROM]&to=[TO]&accumulate=[DURATION]&resource_id=[UUID]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `from`: Timestamp for start of time period in RFC 3339 format (YYYY-MM-DDTHH:MM:SSZ)
+* `to`: Timestamp for end of time period in RFC 3339 format (YYYY-MM-DDTHH:MM:SSZ)
+* `resourceuuid`: UUID for the resource
+* `duration`: Specifies time block for accumulating usage in the report -- possible values are:
+  * `day`
+  * `hour`
+
+#### `currentNetworkUsage`
+
+*Description*: Get latest network transfer pool usage report
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/account/current_network_usage`
+
+*Request Type*: GET
+
+*Parameters*: None
+
 
 
 ## Dependencies
