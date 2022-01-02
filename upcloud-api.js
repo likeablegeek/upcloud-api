@@ -388,6 +388,30 @@ let uc = {
             path: "router/[routeruuid]"
         },
 
+        listObjectStorages: {
+            type: "GET",
+            path: "object-storage"
+        },
+        objectStorageDetails: {
+            type: "GET",
+            path: "object-storage/[objectuuid]"
+        },
+        createObjectStorage: {
+            type: "POST",
+            path: "object-storage"
+        },
+        modifyObjectStorage: {
+            type: "PATCH",
+            path: "object-storage/[objectuuid]"
+        },
+        deleteObjectStorage: {
+            type: "DELETE",
+            path: "object-storage/[objectuuid]"
+        },
+        objectStorageNetworkUsage: {
+            type: "GET",
+            path: "object-storage/[objectuuid]/stats/network/?from=[from]&to=[to]"
+        },
 
     },
 

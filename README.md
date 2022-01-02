@@ -1172,6 +1172,82 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 * `routeruuid`: UUID of router
 
 
+### Object Storage Commands
+
+#### `ListObjectStorages`
+
+*Description*: Get list of object storage devices
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/object-storage`
+
+*Request Type*: GET
+
+*Parameters*: None
+
+#### `objectStorageDetails`
+
+*Description*: Get details of an object storage device
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/object-storage/[UUID]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `objectuuid`: UUID of object storage device
+
+#### `createObjectStorage`
+
+*Description*: Create a new object storage device
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/object-storage`
+
+*Request Type*: POST
+
+*Parameters*: None
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `modifyObjectStorage`
+
+*Description*: Modify an object storage device
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/object-storage/[UUID]`
+
+*Request Type*: PATCH
+
+*Parameters*:
+
+* `objectuuid`: UUID of object storage device
+
+*PATCH Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `deleteObjectStorage`
+
+*Description*: Delete an object storage device
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/object-storage/[UUID]`
+
+*Request Type*: DELETE
+
+*Parameters*:
+
+* `objectuuid`: UUID of object storage device
+
+#### `objectStorageNetworkUsage`
+
+*Description*: Get network usage of an object storage device for a time range
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/object-storage/[UUID]/stats/network/?from=[FROM]&to=[TO]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `objectuuid`: UUID of object storage device
+* `from`: Timestamp for start of time period in RFC 3339 format (YYYY-MM-DDTHH:MM:SSZ)
+* `to`: Timestamp for end of time period in RFC 3339 format (YYYY-MM-DDTHH:MM:SSZ)
+
 
 ## Dependencies
 
