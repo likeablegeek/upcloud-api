@@ -52,6 +52,8 @@ let uc = {
 
     manifest: {
 
+        // Server Commands
+
         listServerConfs: {
             type: "GET",
             path: "server_size"
@@ -92,6 +94,8 @@ let uc = {
             type: "DELETE",
             path: "server/[serveruuid]?storages=[storageaction]&backups=[backupaction]"
         },
+
+        // Storage Commands
 
         storageDetails: {
             type: "GET",
@@ -182,21 +186,28 @@ let uc = {
             path: "storage/[storageuuid]?&backups=[backupaction]"
         },
 
+        // Plan Commands
 
         listPlans: {
             type: "GET",
             path: "plan"
         },
 
+        // Zone Commands
+
         listZones: {
             type: "GET",
             path: "zone"
         },
 
+        // Price Commands
+
         listPrices: {
             type: "GET",
             path: "price"
         },
+
+        // Account Commands
 
         accountInfo: {
             type: "GET",
@@ -247,6 +258,8 @@ let uc = {
             path: "account/current_network_usage"
         },
 
+        // IP Address Commands
+
         listAddresses: {
             type: "GET",
             path: "ip_address"
@@ -268,6 +281,8 @@ let uc = {
             path: "ip_address/[address]"
         },
 
+        // Firewall Commands
+
         listRules: {
             type: "GET",
             path: "server/[serveruuid]/firewall_rule"
@@ -288,6 +303,8 @@ let uc = {
             type: "DELETE",
             path: "server/[serveruuid]/firewall_rule/[index]"
         },
+
+        // Tag Comands
 
         listTags: {
             type: "GET",
@@ -314,6 +331,8 @@ let uc = {
             path: "server/[serveruuid]/untag/[tags]"
         },
 
+        // Host Commands
+
         listHosts: {
             type: "GET",
             path: "host"
@@ -326,6 +345,8 @@ let uc = {
             type: "PATCH",
             path: "host/[hostid]"
         },
+
+        // Network Commands
 
         listNetworks: {
             type: "GET",
@@ -388,6 +409,8 @@ let uc = {
             path: "router/[routeruuid]"
         },
 
+        // Object Storage Commands
+        
         listObjectStorages: {
             type: "GET",
             path: "object-storage"
