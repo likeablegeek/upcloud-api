@@ -268,6 +268,27 @@ let uc = {
             path: "ip_address/[address]"
         },
 
+        listRules: {
+            type: "GET",
+            path: "server/[serveruuid]/firewall_rule"
+        },
+        ruleDetails: {
+            type: "GET",
+            path: "server/[serveruuid]/firewall_rule/[index]"
+        },
+        createRule: {
+            type: "POST",
+            path: "server/[serveruuid]/firewall_rule"
+        },
+        createRules: {
+            type: "PUT",
+            path: "server/[serveruuid]/firewall_rule"
+        },
+        removeRule: {
+            type: "DELETE",
+            path: "server/[serveruuid]/firewall_rule/[index]"
+        },
+
 
 
     },

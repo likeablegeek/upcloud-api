@@ -794,6 +794,74 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 * `address`: IP address such as `127.0.0.1`
 
 
+### Firewall Commands
+
+#### `listRules`
+
+*Description*: Get list of firewall rules for a specified server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/firewall_rule`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `serveruuid`: UUID of the server
+
+#### `ruleDetails`
+
+*Description*: Get details of a specific firewall rule for a specified rules
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/firewall_rule/[INDEX]`
+
+*Request Type*: GET
+
+*Parameters*:
+
+* `serveruuid`: UUID of the server
+* `index`: Index of the rule in the list of firewall rules for the server (first entry is index `1`)
+
+#### `createRule`
+
+*Description*: Create a firewall rule for a specified server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/firewall_rule`
+
+*Request Type*: POST
+
+*Parameters*:
+
+* `serveruuid`: UUID of the server
+
+*POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `createRules`
+
+*Description*: Create multiple firewall rules for a specified server
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/firewall_rule`
+
+*Request Type*: PUT
+
+*Parameters*:
+
+* `serveruuid`: UUID of the server
+
+*PUT Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
+
+#### `removeRule`
+
+*Description*: Remove a specific firewall rule from a specified rules
+
+*UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/firewall_rule/[INDEX]`
+
+*Request Type*: DELETE
+
+*Parameters*:
+
+* `serveruuid`: UUID of the server
+* `index`: Index of the rule in the list of firewall rules for the server (first entry is index `1`)
+
 
 
 
