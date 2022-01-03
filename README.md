@@ -103,7 +103,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
   storage_device": {
     type: "disk",
     address: "virtio",
-    storage: "STORAGE_TEMPLATE_UUID_HERE",
+    storage: "STORAGE_RESOURCE_UUID_HERE",
     boot_disk: 0
   }
 }, (res) => {
@@ -242,10 +242,10 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 *Parameters*:
 
 * `serveruuid`: UUID for the server
-* `storageaction`: Indicates whether to delete attached storage -- possible values are:
-  * `0` or `false`: Don't delete attached storage
-  * `1` or `true`: Delete attached storage
-* `backupaction`: Indicates whether to keep backups of deleted storage -- possible values are:
+* `storageaction`: Indicates whether to delete attached storage resources -- possible values are:
+  * `0` or `false`: Don't delete attached storage resources
+  * `1` or `true`: Delete attached storage resources
+* `backupaction`: Indicates whether to keep backups of deleted storage resources -- possible values are:
   * `keep`: Keep all backups
   * `keep_latest`: Keep latest backup
   * `delete`: Delete backups
@@ -255,7 +255,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 #### `storageDetails`
 
-*Description*: Request details of a specific storage item
+*Description*: Request details of a specific storage resources
 
 *UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage`
 
@@ -263,7 +263,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `storageuuid`: UUID for the storage item
+* `storageuuid`: UUID for the storage resource
 
 #### `listTemplates`
 
@@ -277,7 +277,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 #### `listStorages`
 
-*Description*: Requests a list of active storage items
+*Description*: Requests a list of active storage resources
 
 *UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage`
 
@@ -287,7 +287,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 #### `listStoragesByType`
 
-*Description*: Requests a list of active storage items by type
+*Description*: Requests a list of active storage resources by type
 
 *UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[TYPE]`
 
@@ -295,7 +295,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `storagetype`: The type of storage to return in the list -- possible values are:
+* `storagetype`: The type of storage resources to return in the list -- possible values are:
   * `public`
   * `private`
   * `normal`
@@ -336,13 +336,13 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `storageuuid`: UUID for the storage template
+* `storageuuid`: UUID for the storage resource
 
 *PUT Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
 #### `cloneStorage`
 
-*Description*: Clone a storage template to a new storage item
+*Description*: Clone a storage template to a new storage resource
 
 *UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[UUID]/clone`
 
@@ -350,13 +350,13 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `storageuuid`: UUID for the storage template
+* `storageuuid`: UUID for the storage resource
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
 #### `attachStorage`
 
-*Description*: Attach a storage item to a server
+*Description*: Attach a storage resource to a server
 
 *UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/storage/attach`
 
@@ -370,7 +370,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 #### `detachStorage`
 
-*Description*: Detach a storage item from a server
+*Description*: Detach a storage resource from a server
 
 *UpCloud API Endpoint*: `https://api.upcloud.com/1.3/server/[UUID]/storage/detach`
 
@@ -420,7 +420,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `storageuuid`: UUID for the storage
+* `storageuuid`: UUID for the storage resource
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
@@ -434,7 +434,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `storageuuid`: UUID for the storage
+* `storageuuid`: UUID for the storage resource
 
 #### `cancelStorageImport`
 
@@ -446,13 +446,13 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `storageuuid`: UUID for the storage
+* `storageuuid`: UUID for the storage resource
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
 #### `cancelStorageOperation`
 
-*Description*: Cancel a running cloning operation
+*Description*: Cancel a running storage cloning operation
 
 *UpCloud API Endpoint*: `https://api.upcloud.com/1.3/storage/[UUID]/cancel`
 
@@ -460,7 +460,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `storageuuid`: UUID for the storage
+* `storageuuid`: UUID for the storage resource
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
@@ -474,7 +474,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `storageuuid`: UUID for the storage
+* `storageuuid`: UUID for the storage resource
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
@@ -488,7 +488,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `storageuuid`: UUID for the storage
+* `storageuuid`: UUID for the storage resource
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
@@ -502,7 +502,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `storageuuid`: UUID for the storage
+* `storageuuid`: UUID for the storage resource
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
@@ -516,7 +516,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `storageuuid`: UUID for the storage
+* `storageuuid`: UUID for the storage resource
 
 *POST Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
@@ -530,7 +530,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `storageuuid`: UUID for the storage
+* `storageuuid`: UUID for the storage resource
 
 #### `deleteStorage`
 
@@ -542,8 +542,8 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `serveruuid`: UUID for the server
-* `backupaction`: Indicates whether to keep backups of deleted storage -- possible values are:
+* `storageuuid`: UUID for the storage resource
+* `backupaction`: Indicates whether to keep backups of deleted storage resources -- possible values are:
   * `keep`: Keep all backups
   * `keep_latest`: Keep latest backup
   * `delete`: Delete backups
@@ -1192,7 +1192,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 #### `ListObjectStorages`
 
-*Description*: Get list of object storage devices
+*Description*: Get list of object storage resources
 
 *UpCloud API Endpoint*: `https://api.upcloud.com/1.3/object-storage`
 
@@ -1202,7 +1202,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 #### `objectStorageDetails`
 
-*Description*: Get details of an object storage device
+*Description*: Get details of an object storage resources
 
 *UpCloud API Endpoint*: `https://api.upcloud.com/1.3/object-storage/[UUID]`
 
@@ -1210,11 +1210,11 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `objectuuid`: UUID of object storage device
+* `objectuuid`: UUID of object storage resources
 
 #### `createObjectStorage`
 
-*Description*: Create a new object storage device
+*Description*: Create a new object storage resources
 
 *UpCloud API Endpoint*: `https://api.upcloud.com/1.3/object-storage`
 
@@ -1226,7 +1226,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 #### `modifyObjectStorage`
 
-*Description*: Modify an object storage device
+*Description*: Modify an object storage resources
 
 *UpCloud API Endpoint*: `https://api.upcloud.com/1.3/object-storage/[UUID]`
 
@@ -1234,13 +1234,13 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `objectuuid`: UUID of object storage device
+* `objectuuid`: UUID of object storage resources
 
 *PATCH Data*: See the [UpCloud API documentation](https://developers.upcloud.com/1.3/)
 
 #### `deleteObjectStorage`
 
-*Description*: Delete an object storage device
+*Description*: Delete an object storage resources
 
 *UpCloud API Endpoint*: `https://api.upcloud.com/1.3/object-storage/[UUID]`
 
@@ -1248,11 +1248,11 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `objectuuid`: UUID of object storage device
+* `objectuuid`: UUID of object storage resources
 
 #### `objectStorageNetworkUsage`
 
-*Description*: Get network usage of an object storage device for a time range
+*Description*: Get network usage of an object storage resource for a time range
 
 *UpCloud API Endpoint*: `https://api.upcloud.com/1.3/object-storage/[UUID]/stats/network/?from=[FROM]&to=[TO]`
 
@@ -1260,7 +1260,7 @@ uc.call("createServer", { serveruuid: SERVER_UUID_HERE }, {
 
 *Parameters*:
 
-* `objectuuid`: UUID of object storage device
+* `objectuuid`: UUID of object storage resource
 * `from`: Timestamp for start of time period in RFC 3339 format (YYYY-MM-DDTHH:MM:SSZ)
 * `to`: Timestamp for end of time period in RFC 3339 format (YYYY-MM-DDTHH:MM:SSZ)
 
