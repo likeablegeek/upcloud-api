@@ -485,7 +485,7 @@ let uc = {
         fn(options, (err, res, body) => {
 
             // Convert to string, parse as JSON
-            if (typeof(body) == "string") {
+            if (typeof(body) == "string" && body.length > 0) {
                 data = JSON.parse(body);
             } else {
                 data = body;
